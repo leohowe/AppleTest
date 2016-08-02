@@ -111,7 +111,9 @@ public class Apple {
 	 * @param peeled
 	 */
 	public void setEaten(boolean eaten) {
-		this.eaten = eaten;
+		if(isPeeled() && eaten)
+			this.eaten = eaten;
+		else this.eaten = false;
 	}
 
 }
