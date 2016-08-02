@@ -103,7 +103,7 @@ public class Apple {
 	/**
 	 * Peels the apple
 	 */
-	public void peel()
+	public void peel(ApplePeeler peeler)
 	{
 		
 	}

@@ -146,7 +146,7 @@ public class AppleTest {
 		ApplePeeler peeler = new ApplePeeler();
 		Apple unPeelableApple = new Apple(Apple.AppleColour.green, 10, 2, false);
 		
-		unPeelableApple.peel();
+		unPeelableApple.peel(peeler);
 		assertFalse(unPeelableApple.isPeeled());
 	}
 	
@@ -159,7 +159,7 @@ public class AppleTest {
 		ApplePeeler peeler = new ApplePeeler();
 		Apple unPeelableApple = new Apple(Apple.AppleColour.blue, 10, 4, false);
 		
-		unPeelableApple.peel();
+		unPeelableApple.peel(peeler);
 		assertFalse(unPeelableApple.isPeeled());
 	}
 				
@@ -171,7 +171,7 @@ public class AppleTest {
 		ApplePeeler peeler = new ApplePeeler();
 		Apple unPeelableApple = new Apple(Apple.AppleColour.red, 10, 3, false);
 		
-		unPeelableApple.peel();
+		unPeelableApple.peel(peeler);
 		assertFalse(unPeelableApple.isPeeled());
 	}
 	
@@ -183,7 +183,7 @@ public class AppleTest {
 		ApplePeeler peeler = new ApplePeeler();
 		Apple peelableApple = new Apple(Apple.AppleColour.green, 10, 4, false);
 		
-		peelableApple.peel();
+		peelableApple.peel(peeler);
 		assertTrue(peelableApple.isPeeled());
 	}
 
@@ -195,7 +195,7 @@ public class AppleTest {
 		ApplePeeler peeler = new ApplePeeler();
 		Apple peelableApple = new Apple(Apple.AppleColour.red, 10, 4, false);
 		
-		peelableApple.peel();
+		peelableApple.peel(peeler);
 		assertTrue(peelableApple.isPeeled());
 	}
 	
@@ -207,7 +207,7 @@ public class AppleTest {
 		ApplePeeler peeler = new ApplePeeler();
 		Apple peelableApple = new Apple(Apple.AppleColour.blue, 10, 4, false);
 		
-		peelableApple.peel();
+		peelableApple.peel(peeler);
 		assertFalse(peelableApple.isPeeled());
 	}
 	
@@ -219,7 +219,7 @@ public class AppleTest {
 		ValyrianPeeler peeler = new ValyrianPeeler();
 		Apple peelableApple = new Apple(Apple.AppleColour.blue, 10, 4, false);
 		
-		peelableApple.peel();
+		peelableApple.peel((ApplePeeler)peeler);
 		assertTrue(peelableApple.isPeeled());
 	}
 }
