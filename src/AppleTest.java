@@ -69,4 +69,22 @@ public class AppleTest {
 		
 	}
 	
+	/**
+	 * Test apple instantiated with correct weight 
+	 */
+	@Test
+	public void testAppleWeight_isInRange() throws Exception {
+		Apple apple2 = new Apple("", 10, 1, true);
+		assertNotNull(apple2);
+		assertTrue(apple2.getWeight() >= 10 && apple2.getWeight() <= 100);
+	}
+	
+	/**
+	 * Test apple not instantiated with incorrect weight 
+	 */
+	@Test (expected = Exception.class)
+	public void testAppleWeight_isOutsideRange() throws Exception {
+		Apple apple3 = new Apple("", 0, 1, true);
+	}
+	
 }

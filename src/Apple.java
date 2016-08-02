@@ -12,7 +12,7 @@ public class Apple {
 	public Apple(String colour, double weight, int taste, boolean wormInside) throws Exception
 	{
 		this.colour = colour;
-		this.weight = weight;
+		this.setWeight(weight);
 		this.setTaste(taste);
 		this.wormInside = wormInside;
 	}
@@ -33,6 +33,16 @@ public class Apple {
 		return weight;
 	}
 
+	/**
+	 * Sets the weight of the apple
+	 */
+	public void setWeight(double weight) throws Exception {
+		if(weight < 10 || weight > 100)
+			throw new Exception();
+		else
+			this.weight = weight;
+	}
+	
 	/**
 	 * Returns the taste setting of the apple
 	 * @return
