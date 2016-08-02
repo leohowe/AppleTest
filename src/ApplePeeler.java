@@ -2,7 +2,9 @@
 public class ApplePeeler implements IApplePeeler {
 
 	@Override
-	public void peel(Apple apple) {
-	}
+	public boolean peel(Apple apple) {
+		return "green".equals(apple.getColour())
+				|| "red".equals(apple.getColour());
+		}
 
 }

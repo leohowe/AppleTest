@@ -2,7 +2,10 @@
 public class ValyrianPeeler extends ApplePeeler {
 
 	@Override
-	public void peel(Apple apple) {
-	}
+	public boolean peel(Apple apple) {
+		return "green".equals(apple.getColour())
+				|| "red".equals(apple.getColour())
+				|| "blue".equals(apple.getColour());
+		}
 
 }

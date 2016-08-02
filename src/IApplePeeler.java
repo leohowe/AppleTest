@@ -1,4 +1,4 @@
 
 public interface IApplePeeler {
-	public void peel(Apple apple);
+	public boolean peel(Apple apple);
 }

@@ -93,7 +93,7 @@ public class Apple {
 	 * Sets the peeded status
 	 * @param peeled
 	 */
-	private void setPeeled(boolean peeled) {
+	private  void setPeeled(boolean peeled) {
 		if(!wormInside && this.taste > 3 && peeled)
 			this.peeled = peeled;
 		else
@@ -105,7 +105,7 @@ public class Apple {
 	 */
 	public void peel(ApplePeeler peeler)
 	{
-		
+		peeler.peel(this);
 	}
 	
 
