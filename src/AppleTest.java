@@ -153,17 +153,52 @@ public class AppleTest {
 	 */
 	@Test
 	public void testApplePeelBeforeEaten() throws Exception {
-		Apple eatApple = new Apple(Apple.AppleColour.blue, 10, 2, false); 
+		Apple eatApple = new Apple(Apple.AppleColour.green, 10, 2, false); 
 		eatApple.setEaten(true);
 		assertFalse(eatApple.isEaten());
 		eatApple.setPeeled(true);
 		eatApple.setEaten(true);
 		assertFalse(eatApple.isEaten());
 		
-		eatApple = new Apple(Apple.AppleColour.blue, 10, 2, false);
+		eatApple = new Apple(Apple.AppleColour.green, 10, 2, false);
 		eatApple.setPeeled(true);
 		eatApple.setEaten(true);
 		assertFalse(eatApple.isEaten());
+	}
+
+	/**
+	 * Test apple not peelable
+	 */
+	@Test
+	public void testApplePeeler_CantPeelGreen() throws Exception {
+		ApplePeeler peeler = new ApplePeeler();
+		Apple nonPeelableApple = new Apple(Apple.AppleColour.green, 10, 2, false);
+		
+		peeler.peel(nonPeelableApple);
+		assertFalse(nonPeelableApple.isPeeled());
+	}
+	
+
+	/**
+	 * Test apple not peelable
+	 */
+	@Test
+	public void testApplePeeler_CantPeelBlue() throws Exception {
+		ApplePeeler peeler = new ApplePeeler();
+		Apple nonPeelableApple = new Apple(Apple.AppleColour.blue, 10, 4, false);
+		peeler.peel(nonPeelableApple);
+		assertFalse(nonPeelableApple.isPeeled());
+	}
+				
+	/**
+	 * Test apple not peelable
+	 */
+	@Test
+	public void testApplePeeler_CantPeelRed() throws Exception {
+		ApplePeeler peeler = new ApplePeeler();
+		Apple		nonPeelableApple = new Apple(Apple.AppleColour.red, 10, 3, false);
+		peeler.peel(nonPeelableApple);
+		assertFalse(nonPeelableApple.isPeeled());
 	}
 
 }
