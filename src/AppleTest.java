@@ -139,12 +139,12 @@ public class AppleTest {
 	}
 	
 	/**
-	 * Test apple peeled status
+	 * Test apple no worm and taste > 3 before eating
 	 */
 	@Test
-	public void testApplePeeled() throws Exception {
+	public void testApplePeeled_noWorm_GreatTaste() throws Exception {
 		apple.setPeeled(true);
-		assertTrue(apple.isPeeled());
+		assertFalse(apple.isPeeled());
 	}
 	
 	
@@ -158,7 +158,12 @@ public class AppleTest {
 		assertFalse(eatApple.isEaten());
 		eatApple.setPeeled(true);
 		eatApple.setEaten(true);
-		assertTrue(eatApple.isEaten());
+		assertFalse(eatApple.isEaten());
+		
+		eatApple = new Apple(Apple.AppleColour.blue, 10, 2, false);
+		eatApple.setPeeled(true);
+		eatApple.setEaten(true);
+		assertFalse(eatApple.isEaten());
 	}
 
 }

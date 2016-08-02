@@ -94,7 +94,10 @@ public class Apple {
 	 * @param peeled
 	 */
 	public void setPeeled(boolean peeled) {
-		this.peeled = peeled;
+		if(!wormInside && this.taste > 3 && peeled)
+			this.peeled = peeled;
+		else
+			this.peeled = false;
 	}
 	
 
