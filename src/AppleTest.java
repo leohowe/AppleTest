@@ -86,5 +86,20 @@ public class AppleTest {
 	public void testAppleWeight_isOutsideRange() throws Exception {
 		Apple apple3 = new Apple("", 0, 1, true);
 	}
-	
+	/**
+	 * Test apple not instantiated with incorrect weight 
+	 */
+	@Test (expected = Exception.class)
+	public void testAppleWeight_isOutsideRange2() throws Exception {
+		Apple apple3 = new Apple("", 101, 0, true);
+	}
+
+	/**
+	 * Test apple not instantiated with incorrect weight 
+	 */
+	@Test (expected = Exception.class)
+	public void testAppleWeight_isOutsideRange3() throws Exception {
+		Apple apple3 = new Apple("", 9, 0, true);
+	}
+
 }
