@@ -105,7 +105,7 @@ public class Apple {
 	 */
 	public void peel(ApplePeeler peeler)
 	{
-		peeler.peel(this);
+		this.setPeeled(peeler.peel(this));
 	}
 	
 
