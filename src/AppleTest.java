@@ -102,4 +102,38 @@ public class AppleTest {
 		Apple apple3 = new Apple("", 9, 0, true);
 	}
 
+	/**
+	 * Test apple colour invalid
+	 */
+	@Test (expected = Exception.class)
+	public void testAppleColour_isINvalid() throws Exception {
+		Apple apple3 = new Apple("Yellow", 10, 2, true);
+	}
+	
+	/**
+	 * Test apple colour 
+	 */
+	@Test
+	public void testAppleColour_isGreen() throws Exception {
+		Apple apple3 = new Apple("", 10, 2, true);
+		assertEquals("green", apple3.getColour().toLowerCase());
+	}
+
+	/**
+	 * Test apple colour 
+	 */
+	@Test
+	public void testAppleColour_isRed() throws Exception {
+		Apple apple3 = new Apple("", 10, 2, true);
+		assertEquals("red", apple3.getColour().toLowerCase());
+	}
+
+	/**
+	 * Test apple colour 
+	 */
+	@Test
+	public void testAppleColour_isBlue() throws Exception {
+		Apple apple3 = new Apple("", 10, 2, true);
+		assertEquals("blue", apple3.getColour().toLowerCase());
+	}
 }
