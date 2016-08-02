@@ -13,7 +13,7 @@ public class AppleTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		apple = new Apple("", 10, 0, true);
+		apple = new Apple("", 10, 1, true);
 	}
 	
 	/**
@@ -43,11 +43,20 @@ public class AppleTest {
 	}
 
 	/**
-	 * Test apple taste
+	 * Test apple taste fail
+	 */
+	@Test (expected = Exception.class)
+	public void testAppleHasNoTaste() throws Exception{
+		Apple apple1 = new Apple("", 10, 0, true);
+	}
+	
+	/**
+	 * Test apple taste success
 	 */
 	@Test
 	public void testAppleHasTaste() {
 		assertNotEquals(0, apple.getTaste());
+		assertTrue(apple.getTaste() >= 1 && apple.getTaste() <= 4);
 		
 	}
 	
