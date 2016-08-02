@@ -8,10 +8,11 @@ public class Apple {
 	private double weight;
 	private int taste;  // Taste 1, 2, 3, 4
 	private boolean wormInside;
+	public enum AppleColour { green, red, blue }
 	
-	public Apple(String colour, double weight, int taste, boolean wormInside) throws Exception
+	public Apple(AppleColour colour, double weight, int taste, boolean wormInside) throws Exception
 	{
-		this.colour = colour;
+		this.setColour(colour);
 		this.setWeight(weight);
 		this.setTaste(taste);
 		this.wormInside = wormInside;
@@ -23,6 +24,14 @@ public class Apple {
 	 */
 	public String getColour() {
 		return colour;
+	}
+	
+	/**
+	 * Sets the colour
+	 */
+	public void setColour(AppleColour colour)
+	{
+		this.colour = colour.name();
 	}
 
 	/**

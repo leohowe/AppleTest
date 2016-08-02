@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
 /**
  * Class to test the representation of an apple
  * @author Leo
@@ -13,7 +14,7 @@ public class AppleTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		apple = new Apple("", 10, 1, true);
+		apple = new Apple(Apple.AppleColour.red, 10, 1, true);
 	}
 	
 	/**
@@ -47,7 +48,7 @@ public class AppleTest {
 	 */
 	@Test (expected = Exception.class)
 	public void testAppleHasNoTaste() throws Exception{
-		Apple apple1 = new Apple("", 10, 0, true);
+		Apple apple1 = new Apple(Apple.AppleColour.green, 10, 0, true);
 	}
 	
 	/**
@@ -74,7 +75,7 @@ public class AppleTest {
 	 */
 	@Test
 	public void testAppleWeight_isInRange() throws Exception {
-		Apple apple2 = new Apple("", 10, 1, true);
+		Apple apple2 = new Apple(Apple.AppleColour.green, 10, 1, true);
 		assertNotNull(apple2);
 		assertTrue(apple2.getWeight() >= 10 && apple2.getWeight() <= 100);
 	}
@@ -84,14 +85,14 @@ public class AppleTest {
 	 */
 	@Test (expected = Exception.class)
 	public void testAppleWeight_isOutsideRange() throws Exception {
-		Apple apple3 = new Apple("", 0, 1, true);
+		Apple apple3 = new Apple(Apple.AppleColour.green, 0, 1, true);
 	}
 	/**
 	 * Test apple not instantiated with incorrect weight 
 	 */
 	@Test (expected = Exception.class)
 	public void testAppleWeight_isOutsideRange2() throws Exception {
-		Apple apple3 = new Apple("", 101, 0, true);
+		Apple apple3 = new Apple(Apple.AppleColour.green, 101, 0, true);
 	}
 
 	/**
@@ -99,7 +100,7 @@ public class AppleTest {
 	 */
 	@Test (expected = Exception.class)
 	public void testAppleWeight_isOutsideRange3() throws Exception {
-		Apple apple3 = new Apple("", 9, 0, true);
+		Apple apple3 = new Apple(Apple.AppleColour.green, 9, 0, true);
 	}
 
 	/**
@@ -107,7 +108,7 @@ public class AppleTest {
 	 */
 	@Test (expected = Exception.class)
 	public void testAppleColour_isINvalid() throws Exception {
-		Apple apple3 = new Apple("Yellow", 10, 2, true);
+		Apple apple3 = new Apple(null, 10, 2, true);
 	}
 	
 	/**
@@ -115,7 +116,7 @@ public class AppleTest {
 	 */
 	@Test
 	public void testAppleColour_isGreen() throws Exception {
-		Apple apple3 = new Apple("", 10, 2, true);
+		Apple apple3 = new Apple(Apple.AppleColour.green, 10, 2, true);
 		assertEquals("green", apple3.getColour().toLowerCase());
 	}
 
@@ -124,7 +125,7 @@ public class AppleTest {
 	 */
 	@Test
 	public void testAppleColour_isRed() throws Exception {
-		Apple apple3 = new Apple("", 10, 2, true);
+		Apple apple3 = new Apple(Apple.AppleColour.red, 10, 2, true);
 		assertEquals("red", apple3.getColour().toLowerCase());
 	}
 
@@ -133,7 +134,7 @@ public class AppleTest {
 	 */
 	@Test
 	public void testAppleColour_isBlue() throws Exception {
-		Apple apple3 = new Apple("", 10, 2, true);
+		Apple apple3 = new Apple(Apple.AppleColour.blue, 10, 2, true);
 		assertEquals("blue", apple3.getColour().toLowerCase());
 	}
 }
