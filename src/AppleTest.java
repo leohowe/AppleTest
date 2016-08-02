@@ -172,10 +172,10 @@ public class AppleTest {
 	@Test
 	public void testApplePeeler_CantPeelGreen() throws Exception {
 		ApplePeeler peeler = new ApplePeeler();
-		Apple nonPeelableApple = new Apple(Apple.AppleColour.green, 10, 2, false);
+		Apple peelableApple = new Apple(Apple.AppleColour.green, 10, 2, false);
 		
-		peeler.peel(nonPeelableApple);
-		assertFalse(nonPeelableApple.isPeeled());
+		peeler.peel(peelableApple);
+		assertFalse(peelableApple.isPeeled());
 	}
 	
 
@@ -185,9 +185,9 @@ public class AppleTest {
 	@Test
 	public void testApplePeeler_CantPeelBlue() throws Exception {
 		ApplePeeler peeler = new ApplePeeler();
-		Apple nonPeelableApple = new Apple(Apple.AppleColour.blue, 10, 4, false);
-		peeler.peel(nonPeelableApple);
-		assertFalse(nonPeelableApple.isPeeled());
+		Apple peelableApple = new Apple(Apple.AppleColour.blue, 10, 4, false);
+		peeler.peel(peelableApple);
+		assertFalse(peelableApple.isPeeled());
 	}
 				
 	/**
@@ -196,9 +196,9 @@ public class AppleTest {
 	@Test
 	public void testApplePeeler_CantPeelRed() throws Exception {
 		ApplePeeler peeler = new ApplePeeler();
-		Apple		nonPeelableApple = new Apple(Apple.AppleColour.red, 10, 3, false);
-		peeler.peel(nonPeelableApple);
-		assertFalse(nonPeelableApple.isPeeled());
+		Apple peelableApple = new Apple(Apple.AppleColour.red, 10, 3, false);
+		peeler.peel(peelableApple);
+		assertFalse(peelableApple.isPeeled());
 	}
 	
 	/**
@@ -207,10 +207,10 @@ public class AppleTest {
 	@Test
 	public void testApplePeeler_PeelGreen() throws Exception {
 		ApplePeeler peeler = new ApplePeeler();
-		Apple nonPeelableApple = new Apple(Apple.AppleColour.green, 10, 4, false);
+		Apple peelableApple = new Apple(Apple.AppleColour.green, 10, 4, false);
 		
-		peeler.peel(nonPeelableApple);
-		assertTrue(nonPeelableApple.isPeeled());
+		peeler.peel(peelableApple);
+		assertTrue(peelableApple.isPeeled());
 	}
 
 	/**
@@ -219,10 +219,10 @@ public class AppleTest {
 	@Test
 	public void testApplePeeler_PeelRed() throws Exception {
 		ApplePeeler peeler = new ApplePeeler();
-		Apple nonPeelableApple = new Apple(Apple.AppleColour.red, 10, 4, false);
+		Apple peelableApple = new Apple(Apple.AppleColour.red, 10, 4, false);
 		
-		peeler.peel(nonPeelableApple);
-		assertTrue(nonPeelableApple.isPeeled());
+		peeler.peel(peelableApple);
+		assertTrue(peelableApple.isPeeled());
 	}
 
 	/**
@@ -231,10 +231,48 @@ public class AppleTest {
 	@Test
 	public void testApplePeeler_PeelBlue() throws Exception {
 		ApplePeeler peeler = new ApplePeeler();
-		Apple nonPeelableApple = new Apple(Apple.AppleColour.blue, 10, 4, false);
+		Apple peelableApple = new Apple(Apple.AppleColour.blue, 10, 4, false);
 		
-		peeler.peel(nonPeelableApple);
-		assertTrue(nonPeelableApple.isPeeled());
+		peeler.peel(peelableApple);
+		assertFalse(peelableApple.isPeeled());
+		
+		ValyrianPeeler vPeeler = new ValyrianPeeler();
+		vPeeler.peel(peelableApple);
+		assertTrue(peelableApple.isPeeled());
+		
 	}
+
+	/**
+	 * Test Valyrian peels any apple
+	 */
+	@Test
+	public void testApplePeeler_Valyrian() throws Exception {
+		ValyrianPeeler vPeeler = new ValyrianPeeler();
+		Apple nonPeelableRedApple = new Apple(Apple.AppleColour.red, 10, 4, true);
+		Apple nonPeelableGreenApple = new Apple(Apple.AppleColour.red, 10, 4, true);
+		Apple nonPeelableBlueApple = new Apple(Apple.AppleColour.red, 10, 4, true);
+		Apple peelableRedApple = new Apple(Apple.AppleColour.red, 10, 4, false);
+		Apple peelableGreenApple = new Apple(Apple.AppleColour.red, 10, 4, false);
+		Apple peelableBlueApple = new Apple(Apple.AppleColour.red, 10, 4, false);
+		
+		vPeeler.peel(nonPeelableRedApple);
+		assertFalse(peelableRedApple.isPeeled());
+
+		vPeeler.peel(nonPeelableGreenApple);
+		assertFalse(nonPeelableGreenApple.isPeeled());
+
+		vPeeler.peel(nonPeelableBlueApple);
+		assertFalse(nonPeelableBlueApple.isPeeled());
+
+		vPeeler.peel(peelableRedApple);
+		assertTrue(peelableRedApple.isPeeled());
+		
+		vPeeler.peel(peelableGreenApple);
+		assertTrue(peelableGreenApple.isPeeled());
+		
+		vPeeler.peel(peelableBlueApple);
+		assertTrue(peelableBlueApple.isPeeled());
+	}
+
 
 }
