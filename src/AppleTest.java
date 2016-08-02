@@ -200,5 +200,41 @@ public class AppleTest {
 		peeler.peel(nonPeelableApple);
 		assertFalse(nonPeelableApple.isPeeled());
 	}
+	
+	/**
+	 * Test Green apple is peelable
+	 */
+	@Test
+	public void testApplePeeler_PeelGreen() throws Exception {
+		ApplePeeler peeler = new ApplePeeler();
+		Apple nonPeelableApple = new Apple(Apple.AppleColour.green, 10, 4, false);
+		
+		peeler.peel(nonPeelableApple);
+		assertTrue(nonPeelableApple.isPeeled());
+	}
+
+	/**
+	 * Test Red apple is peelable
+	 */
+	@Test
+	public void testApplePeeler_PeelRed() throws Exception {
+		ApplePeeler peeler = new ApplePeeler();
+		Apple nonPeelableApple = new Apple(Apple.AppleColour.red, 10, 4, false);
+		
+		peeler.peel(nonPeelableApple);
+		assertTrue(nonPeelableApple.isPeeled());
+	}
+
+	/**
+	 * Test Blue apple is peelable
+	 */
+	@Test
+	public void testApplePeeler_PeelBlue() throws Exception {
+		ApplePeeler peeler = new ApplePeeler();
+		Apple nonPeelableApple = new Apple(Apple.AppleColour.blue, 10, 4, false);
+		
+		peeler.peel(nonPeelableApple);
+		assertTrue(nonPeelableApple.isPeeled());
+	}
 
 }
