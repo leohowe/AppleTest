@@ -143,14 +143,22 @@ public class AppleTest {
 	 */
 	@Test
 	public void testApplePeeled() throws Exception {
+		apple.setPeeled(true);
 		assertTrue(apple.isPeeled());
 	}
 	
+	
 	/**
-	 * Test apple eaten status
+	 * Test apple peeled before eaten status
 	 */
 	@Test
-	public void testAppleEaten() throws Exception {
-		assertTrue(apple.isEaten());
+	public void testApplePeelBeforeEaten() throws Exception {
+		Apple eatApple = new Apple(Apple.AppleColour.blue, 10, 2, false); 
+		eatApple.setEaten(true);
+		assertFalse(eatApple.isEaten());
+		eatApple.setPeeled(true);
+		eatApple.setEaten(true);
+		assertTrue(eatApple.isEaten());
 	}
+
 }

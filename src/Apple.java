@@ -88,6 +88,15 @@ public class Apple {
 	public boolean isPeeled() {
 		return peeled;
 	}
+	
+	/**
+	 * Sets the peeded status
+	 * @param peeled
+	 */
+	public void setPeeled(boolean peeled) {
+		this.peeled = peeled;
+	}
+	
 
 	/**
 	 * Returns the eaten status
@@ -95,6 +104,14 @@ public class Apple {
 	 */
 	public boolean isEaten() {
 		return eaten;
+	}
+	
+	/**
+	 * Sets the eaten status
+	 * @param peeled
+	 */
+	public void setEaten(boolean eaten) {
+		this.eaten = eaten;
 	}
 
 }
