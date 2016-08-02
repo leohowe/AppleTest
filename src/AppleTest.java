@@ -137,4 +137,20 @@ public class AppleTest {
 		Apple apple3 = new Apple(Apple.AppleColour.blue, 10, 2, true);
 		assertEquals("blue", apple3.getColour().toLowerCase());
 	}
+	
+	/**
+	 * Test apple peeled status
+	 */
+	@Test
+	public void testApplePeeled() throws Exception {
+		assertTrue(apple.isPeeled());
+	}
+	
+	/**
+	 * Test apple eaten status
+	 */
+	@Test
+	public void testAppleEaten() throws Exception {
+		assertTrue(apple.isEaten());
+	}
 }

@@ -8,6 +8,8 @@ public class Apple {
 	private double weight;
 	private int taste;  // Taste 1, 2, 3, 4
 	private boolean wormInside;
+	private boolean peeled;
+	private boolean eaten;
 	public enum AppleColour { green, red, blue }
 	
 	public Apple(AppleColour colour, double weight, int taste, boolean wormInside) throws Exception
@@ -78,4 +80,21 @@ public class Apple {
 	public boolean hasWormInside() {
 		return wormInside;
 	}
+	
+	/**
+	 * Returns the peeled status
+	 * @return
+	 */
+	public boolean isPeeled() {
+		return peeled;
+	}
+
+	/**
+	 * Returns the eaten status
+	 * @return
+	 */
+	public boolean isEaten() {
+		return eaten;
+	}
+
 }
